@@ -6,10 +6,11 @@
                 <el-input v-model="model.name"></el-input>
             </el-form-item>
             <el-form-item label="图标" label-width="120px">
-                <el-upload
+                <el-upload  
                     class="avatar-uploader"
-                    :action="$http.defaults.baseURL + '/upload'"
+                    :action="uploadUrl"
                     :show-file-list="false"
+                    :headers="getAuthHeaders()"
                     :on-success="afterUpload">
                     <img v-if="model.icon" :src="model.icon" class="avatar">
                     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
@@ -34,8 +35,9 @@
             }
         },
         created() {
-            this.id && this.fetch()
             console.log(this)
+            this.id && this.fetch()
+            console.log(this.getAuthHeaders())
         },
         methods: {
             async fetch() {
