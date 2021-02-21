@@ -8,9 +8,9 @@
             </el-table-column>
             <el-table-column prop="title" label="英雄称号">
             </el-table-column>
-            <el-table-column prop="avater" label="图标">
+            <el-table-column prop="avatar" label="图标">
                 <template slot-scope="scope">
-                    <img :src="scope.row.avater" style="height: 3rem;">
+                    <img :src="scope.row.avatar" style="height: 3rem;">
                 </template>
             </el-table-column>
             <el-table-column
